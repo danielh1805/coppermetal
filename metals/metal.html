@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">קונה אלומיניום | קניית אלומיניום במחירים תחרותיים | מחזור אלומיניום בישראל</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description" id="meta-description">
+    <meta name="keywords" id="meta-keywords">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.coppermetal.com/logoman.png" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1 id="header-title"></h1>
+        <button class="phone-button" onclick="window.location.href='tel:+972524796363';">התקשרו אלינו עכשיו</button>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <div id="nav-links">
+            <a href="../index.html">בית</a>
+            <a href="#contact">צור קשר</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Intro Section -->
+        <section class="section">
+            <h2 class="section-title">קניית <span id="metal-name"></span> - מחירים תחרותיים ושירותים מקצועיים</h2>
+            <p id="intro-text"></p>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section">
+            <div class="about-us-container">
+                <h2 class="section-title">קניית <span id="metal-name-2"></span> במחירים משתלמים - פינוי מהיר ומותאם אישית</h2>
+                <div class="about-us-box">
+                    <p id="services-text"></p>
+                    <img id="service-image" src="../../assets/images/aluminum.webp" alt="Metal Image" loading="lazy" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">פינוי ומחזור <span id="metal-name-4"></span> במרכז הארץ </h2>
+            <ul id="city-links"></ul>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">מעוניינים למכור סוגי מתכות נוספים</h2>
+            <ul id="metal-links"></ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2 class="section-title">צור קשר</h2>
+            <h3>קבל הצעת מחיר עבור <span id="metal-name-3"></span></h3>
+            <p id="contact-text"></p>
+            
+            <p>התקשרו אלינו<a href="tel:+972524796363" style="color: #4CAF50; font-weight: bold;">
+                <br>
+                0524796363</a>
+            </p>
+            <p>שלחו לנו מייל<a href="mailto:coppermetal@gmail.com" style="color: #4CAF50; font-weight: bold;">
+                <br>
+                coppermetal@gmail.com</a>
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 DH. כל הזכויות שמורות</p>
+    </footer>
+
+    <!-- WhatsApp and Call Button Container -->
+<div class="action-buttons">
+    <div class="whatsapp-button" id="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="call-button" onclick="window.location.href='tel:+972524796363';">
+        <i class="fas fa-phone-alt"></i>
+    </div>
+</div>
+
+    <script>
+        async function loadMetalData() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const metalType = urlParams.get("metal") || "aluminum"; // Default to aluminum
+
+    // Hebrew translation mapping
+    const metalNamesHebrew = {
+        "aluminum": "אלומיניום",
+        "copper": "נחושת",
+        "iron": "ברזל",
+        "stainless": "נירוסטה",
+        "cables": "כבלים",
+        "ac": "מזגנים"
+    };
+
+    // Get Hebrew name (fallback to English if not found)
+    const metalNameHebrew = metalNamesHebrew[metalType] || metalType;
+
+    try {
+        const response = await fetch("../assets/data/metal.json");
+        if (!response.ok) throw new Error("JSON not found");
+
+        const data = await response.json();
+        if (!data[metalType]) throw new Error("Metal not found");
+
+        const metalData = data[metalType];
+
+        // Set general content
+        document.getElementById("page-title").innerText = metalData.title;
+        document.getElementById("meta-description").setAttribute("content", metalData.description);
+        document.getElementById("meta-keywords").setAttribute("content", metalData.keywords);
+        document.getElementById("header-title").innerText = metalData.header_title;
+        
+        // Use Hebrew names instead of English
+        document.getElementById("metal-name").innerText = metalNameHebrew;
+        document.getElementById("metal-name-2").innerText = metalNameHebrew;
+        document.getElementById("metal-name-3").innerText = metalNameHebrew;
+        document.getElementById("metal-name-4").innerText = metalNameHebrew;
+        
+        document.getElementById("intro-text").innerHTML = metalData.intro_text;
+        document.getElementById("services-text").innerHTML = metalData.services;
+        document.getElementById("contact-text").innerText = metalData.contact_text;
+        document.getElementById("service-image").setAttribute("src", metalData.image);
+
+        // Generate city links
+        const cityLinksContainer = document.getElementById("city-links");
+        cityLinksContainer.innerHTML = ""; // Clear existing links
+
+        Object.entries(metalData.cities).forEach(([cityKey, cityName]) => {
+            const link = document.createElement("a");
+            link.href = `./metal_city.html?metal=${metalType}&city=${cityKey}`;
+            link.innerText = `קונה ${metalNameHebrew} ב${cityName}`;
+            link.style.display = "block"; // Ensure it appears as a separate link
+            cityLinksContainer.appendChild(link);
+        });
+        
+        // Generate metal links 
+        const metalLinksContainer = document.getElementById("metal-links");
+        metalLinksContainer.innerHTML = ""; // Clear existing links
+
+        Object.entries(metalNamesHebrew).forEach(([metalKey, metalName]) => {
+            if (metalKey !== metalType) { // Avoid linking to the current page
+                const link = document.createElement("a");
+                link.href = `./metal.html?metal=${metalKey}`;
+                link.innerText = `קונה ${metalName}`;
+                link.style.display = "block"; // Ensure it appears as a separate link
+                metalLinksContainer.appendChild(link);
+            }
+        });
+
+    } catch (error) {
+        console.error("Error loading metal data:", error);
+        document.body.innerHTML = "<h1>⚠ שגיאה בטעינת הדף. נסה שוב.</h1>";
+    }
+}
+
+window.onload = loadMetalData;
+    </script>
+</body>
+</html>
