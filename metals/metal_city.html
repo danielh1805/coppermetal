@@ -131,7 +131,7 @@
             const cityNameHebrew = cityNamesHebrew[cityName] || cityName;
     
             try {
-                const response = await fetch("/assets/data/metal_city.json");
+                const response = await fetch("../assets/data/metal_city.json");
                 if (!response.ok) throw new Error("JSON not found");
     
                 const data = await response.json();
