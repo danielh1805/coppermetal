@@ -14,7 +14,7 @@
     <link rel="icon" href="https://www.copperm.com/logoman.png" type="image/png">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -186,8 +186,11 @@
             
             
             } catch (error) {
-                console.error("Error loading data:", error);
-                document.body.innerHTML = "<h1>⚠ שגיאה בטעינת הדף. נסה שוב.</h1>";
+                document.body.innerHTML = `
+                 <h1>⚠ שגיאה בטעינת הדף</h1>
+                 <pre style="direction: ltr; color: red; font-size: 16px;">${error.message}</pre>
+             `;
+                console.error("שגיאה:", error);
             }
         }
     
