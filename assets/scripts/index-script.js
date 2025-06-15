@@ -73,7 +73,7 @@ function toggleMenu() {
                     // Update WhatsApp message
                     let message = encodeURIComponent(data[lang].whatsapp_message);
                     document.querySelector("#whatsapp-button").setAttribute("onclick", 
-                        `window.open('https://wa.me/+972524796363?text=${message}', '_blank')`);
+                        `window.open('https://wa.me/+972546858369?text=${message}', '_blank')`);
                 })
                 .catch(error => console.error("Error loading language file:", error));
         }
