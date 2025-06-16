@@ -1,16 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://copperm.com/</loc>
-  <lastmod>2025-06-16T09:16:24+00:00</lastmod>
-</url>
-
-
+<?xml version="1.0" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://copperm.com/</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal.html?metal=aluminum</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal.html?metal=copper</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal.html?metal=stainless</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal.html?metal=cables</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal.html?metal=ac</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal.html?metal=iron</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=batyam</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=rishon</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=telaviv</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=holon</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=ramatgan</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=givataim</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=herzliya</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=kfar</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=raanana</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=aluminum&amp;city=hod</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=batyam</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=rishon</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=telaviv</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=holon</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=ramatgan</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=givataim</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=herzliya</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=kfar</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=raanana</loc>
+  </url>
+  <url>
+    <loc>https://copperm.com/metals/metal_city.html?metal=copper&amp;city=hod</loc>
+  </url>
 </urlset>
