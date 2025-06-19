@@ -144,7 +144,7 @@
 
         Object.entries(metalData.cities).forEach(([cityKey, cityName]) => {
             const link = document.createElement("a");
-            link.href = `./metal_city.html?metal=${metalType}&city=${cityKey}`;
+            link.href = `metal_city.html?metal=${metalType}&city=${cityKey}`;
             link.innerText = `קונה ${metalNameHebrew} ב${cityName}`;
             link.style.display = "block"; // Ensure it appears as a separate link
             cityLinksContainer.appendChild(link);

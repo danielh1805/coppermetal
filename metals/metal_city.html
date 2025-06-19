@@ -163,7 +163,7 @@
                 Object.entries(data[metalType]).forEach(([cityKey, cityData]) => {
                     if (cityKey !== cityName) { // ✅ Skip the current city
                         const link = document.createElement("a");
-                        link.href = `/metal_city.html?metal=${metalType}&city=${cityKey}`;
+                        link.href = `./metal_city.html?metal=${metalType}&city=${cityKey}`;
                         link.innerText = `קונה ${metalNameHebrew} ב${cityNamesHebrew[cityKey] || cityKey}`;
                         link.style.display = "block"; // Ensure it appears as a separate link
                         cityLinksContainer.appendChild(link);
@@ -177,7 +177,7 @@
                 Object.entries(metalNamesHebrew).forEach(([metalKey, metalName]) => {
                     if (metalKey !== metalType) { // Avoid linking to the current page
                         const link = document.createElement("a");
-                        link.href = `/metal.html?metal=${metalKey}`;
+                        link.href = `metal.html?metal=${metalKey}`;
                         link.innerText = `קונה ${metalName}`;
                         link.style.display = "block"; // Ensure it appears as a separate link
                         metalLinksContainer.appendChild(link);
