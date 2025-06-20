@@ -9,6 +9,15 @@
     <!-- Meta Tags for SEO -->
     <meta name="description" id="meta-description">
     <meta name="keywords" id="meta-keywords">
+
+    <!-- Canonical URL -->
+    <script>
+    const canonicalUrl = window.location.origin + window.location.pathname + window.location.search;
+    const link = document.createElement("link");
+    link.setAttribute("rel", "canonical");
+    link.setAttribute("href", canonicalUrl);
+    document.head.appendChild(link);
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" href="https://www.copperm.com/logoman.png" type="image/png">
@@ -177,7 +186,7 @@
                 Object.entries(metalNamesHebrew).forEach(([metalKey, metalName]) => {
                     if (metalKey !== metalType) { // Avoid linking to the current page
                         const link = document.createElement("a");
-                        link.href = `metal.html?metal=${metalKey}`;
+                        link.href = `./metal.html?metal=${metalKey}`;
                         link.innerText = `קונה ${metalName}`;
                         link.style.display = "block"; // Ensure it appears as a separate link
                         metalLinksContainer.appendChild(link);
